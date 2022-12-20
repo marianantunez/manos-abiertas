@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Agregar Noticias {% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <br/>
+
+            <div class="card">
+                
+                <div class="card-body">
+                    <h1>Agregar Noticias</h1>
+                    <form action='' method='post' enctype="multipart/form-data">
+                                {% csrf_token %}
+
+                                {{ form  }}
+                                <br/>
+                                <br/>
+                                <div class="d-flex justify-content-center">
+                                    <input type="resert" value="Cancelar" class="btn btn-secondary">
+                                    <input type="submit" value="Guardar" class="btn btn-primary">
+                                </div>
+                            </div>
+                    </form>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

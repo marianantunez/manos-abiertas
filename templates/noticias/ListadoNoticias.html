@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock title %}
+
+{% block content %}
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+    <div class="row">  
+            <h3>Listado de noticias</h3>    
+                    
+                    <div class="album py-5 bg-light">
+                        <div class="container">
+                          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                          {% for noticia in object_list %}
+                            <div class="col">
+                                <div class="card" style="width: 18rem;" >
+                                    <a  href="{% url 'detalle' noticia.pk %}">
+
+                                      {% if noticia.imagen %}<img src=" {{noticia.imagen.url}}"  class="card-img-top">
+                                      {% else %} <img src="/static/assets/img/default.jpg" class="card-img-top">
+                                      {% endif%}    
+                                      
+                                      
+                                      <div class="card-body">
+                                        <h5 class="card-title"> {{noticia.titulo}} </h5>
+                                        <p class="card-text"> {{noticia.subtitulo }} </p>
+                                        <p class="card-text"> {{noticia.fecha}} </p>
+                                      </div>
+                                    </a>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                          </div>      
+                        </div>
+                    </div>
+  </div>
+    
+</div>    
+
+{% endblock content %}

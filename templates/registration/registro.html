@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Registro {% endblock title %}
+
+{% block content %}
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+
+            <div class="card">
+                <div class="card-body">
+                    <h1>Registro de usuario</h1>
+                        <form action="" method="post">
+                                {% csrf_token %}
+
+                                {{ form  }}
+                                
+                                <input class="btn btn-primary" type="submit" value="registrar">
+                                <a class="btn btn-outline-secondary" href="{% url 'home' %} ">Ir al home </a>
+                                <a class="btn btn-outline-secondary" href="{% url 'login' %} ">Iniciar sesion</a>
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{% endblock  %}

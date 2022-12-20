@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock title %}
+
+{% block content %}
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>
+    Ingresa tus credenciales
+</h1>
+
+<div class="card" style="width: 18rem; margin: 0 auto; padding: 1rem">
+
+    <form action="" method="post" >
+        <div class="mb-3" style="display: flex; gap: 1rem; flex-direction: column;">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-outline-danger" value="ingresar">
+        </div>
+    </form>
+    
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<h1>
+
+{% endblock  %}
+
